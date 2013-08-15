@@ -1,0 +1,29 @@
+----------------------
+Create Table users
+----------------------
+----------------------
+CREATE TABLE `users` (
+  `idusers` int(11) NOT NULL AUTO_INCREMENT,
+  `identityCard` varchar(45) DEFAULT NULL,
+  `username` varchar(45) DEFAULT NULL,
+  `lastname` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `creditCard` varchar(45) DEFAULT NULL,
+  `register` date DEFAULT NULL,
+  `isActive` tinyblob,
+  `isLimited` tinyblob,
+  PRIMARY KEY (`idusers`),
+  UNIQUE KEY `identityCard_UNIQUE` (`identityCard`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8$$
+
+
+----------------------
+Create Course
+----------------------
+----------------------
+CREATE TABLE `courses` (
+  `idcourse` int(11) NOT NULL AUTO_INCREMENT,
+  `courseName` varchar(45) NOT NULL,
+  PRIMARY KEY (`idcourse`),
+  UNIQUE KEY `courseName_UNIQUE` (`courseName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8$$

@@ -1,0 +1,27 @@
+Stored Procedure
+
+add_user
+-------------
+add_user (
+	IN p_identityCard varchar(45),
+	IN p_username varchar(45),
+	IN p_lastname varchar(45),
+	IN p_address varchar(45),
+	IN p_creditCard varchar(45),
+	IN p_isactive TINYBLOB,
+	IN p_isLimited TINYBLOB
+);
+
+
+select all table
+-----------------
+select_all_users();
+
+add course
+-----------------
+add_course ( IN p_courseName varchar(45) );
+
+
+select all courses
+-----------------
+select_all_courses ();
