@@ -26,9 +26,8 @@ public class CourseRepository extends Repository
 		if(! (courseName instanceof String ))
 			throw new Exception("Only String");
 		
-		//DataBase db = new DataBase(DATABASE_NAME);
-		
 		db.StoredProcdure("call add_course(?)");
+
 		db.addParamString(1, ((String)courseName));
 		db.execute();
 		
@@ -40,7 +39,6 @@ public class CourseRepository extends Repository
 	{
 		List<T> list = new ArrayList<T>();
 		ResultSet result;
-		//DataBase db = new DataBase(DATABASE_NAME);
 		
 		db.StoredProcdure("call select_all_courses ()");
 		result = db.resultQuery();
