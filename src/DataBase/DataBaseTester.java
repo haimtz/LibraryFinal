@@ -17,15 +17,14 @@ public class DataBaseTester {
 		
 		DataBase db = new DataBase("Library_db");
 		
-		db.StoredProcdure("call add_user(?,?,?,?,?,?,?, ?)");
-		db.addParamInt(1, 1);
-		db.addParamString(2, "5676884");
-		db.addParamString(3, "Haim");
-		db.addParamString(4, "Tz");
-		db.addParamString(5, "address Haim");
-		db.addParamString(6, "0000");
-		db.addParamBoolean(7, true);
-		db.addParamBoolean(8, false);
+		db.StoredProcdure("call add_user(?,?,?,?,?,?,?)");
+		db.addParamString(1, "56762284");
+		db.addParamString(2, "ABC");
+		db.addParamString(3, "DFR");
+		db.addParamString(4, "address ABC");
+		db.addParamString(5, "0000");
+		db.addParamBoolean(6, true);
+		db.addParamBoolean(7, false);
 		
 		ResultSet result = db.resultQuery();
 		

@@ -3,8 +3,9 @@ package model;
 
 public abstract class User 
 {
-	protected String ID;
-	protected String Name;
+	protected int iduser;
+	protected String identityCard;
+	protected String username;
 	protected String LastName;
 	protected String DeliveryAddress;
 	protected String CreditNumber;
@@ -19,27 +20,35 @@ public abstract class User
 	
 	public User(String name , String lname , String address , String cnumber)
 	{
-		Name = name;
+		username = name;
 		LastName = lname;
 		DeliveryAddress = address;
 		CreditNumber = cnumber;
 		
 	}
 
-	public String getID() {
-		return ID;
+	public int getIduser() {
+		return iduser;
 	}
 
-	public void setID(String iD) {
-		ID = iD;
+	public void setIduser(int iduser) {
+		this.iduser = iduser;
 	}
 
-	public String getName() {
-		return Name;
+	public String getIdentityCard() {
+		return identityCard;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public void setIdentityCard(String identityCard) {
+		this.identityCard = identityCard;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getLastName() {
@@ -84,7 +93,7 @@ public abstract class User
 
 	public String toString() 
 	{
-		return  "ID = " + ID + "\nFull Name = " + Name + " " + LastName
+		return  "ID = " + identityCard + "\nFull Name = " + username + " " + LastName
 				+ "\nDeliveryAddress = " + DeliveryAddress + "\nCreditNumber = "
 				+ CreditNumber + "\nLimitedUser=" + Limited;
 	}
