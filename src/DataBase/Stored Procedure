@@ -19,9 +19,16 @@ select_all_users();
 
 add course
 -----------------
-add_course ( IN p_courseName varchar(45) );
+add_course (IN p_courseName varchar(45));
 
 
 select all courses
 -----------------
 select_all_courses ();
+
+add student
+-----------------
+add_student (
+IN p_idstudent INT,
+IN p_idclass INT
+);

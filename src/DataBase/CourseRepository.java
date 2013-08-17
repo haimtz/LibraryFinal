@@ -20,12 +20,8 @@ public class CourseRepository extends Repository
 	 * @param <T>
 	 * @param t course name
 	 */
-	@Override
-	public <T> void add(T courseName) throws Exception
-	{
-		if(! (courseName instanceof String ))
-			throw new Exception("Only String");
-		
+	public void add(String courseName) throws Exception
+	{		
 		db.StoredProcdure("call add_course(?)");
 
 		db.addParamString(1, ((String)courseName));
@@ -34,20 +30,19 @@ public class CourseRepository extends Repository
 		db.close();
 	}
 
-	@Override
-	public <T> List<T> getList() throws Exception
+	public List<Course> getList() throws Exception
 	{
-		List<T> list = new ArrayList<T>();
+		List<Course> list = new ArrayList<Course>();
 		ResultSet result;
 		
-		db.StoredProcdure("call select_all_courses ()");
+		db.StoredProcdure("call select_all_courses()");
 		result = db.resultQuery();
 		
 		
 		
 		while(result.next())
 		{
-			list.add((T) new Course(result.getInt("idcourse"), result.getString("courseName")));
+			//TODO add object to list
 		}
 		
 		db.close();

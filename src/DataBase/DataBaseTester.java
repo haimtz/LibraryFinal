@@ -4,8 +4,7 @@ package DataBase;
 import java.sql.ResultSet;
 import java.util.List;
 
-import model.Course;
-import model.User;
+import model.*;
 
 public class DataBaseTester {
 
@@ -15,36 +14,16 @@ public class DataBaseTester {
 	 */
 	public static void main(String[] args) throws Exception {
 		
-		DataBase db = new DataBase("Library_db");
+		Course course = new Course();
+		course.setIdClass(1);
 		
-		db.StoredProcdure("call add_user(?,?,?,?,?,?,?)");
-		db.addParamString(1, "56762284");
-		db.addParamString(2, "ABC");
-		db.addParamString(3, "DFR");
-		db.addParamString(4, "address ABC");
-		db.addParamString(5, "0000");
-		db.addParamBoolean(6, true);
-		db.addParamBoolean(7, false);
+		Student student = new Student("1234", "DB", "TEST", "ADD GMAIL", "09888", "89", course);
 		
-		ResultSet result = db.resultQuery();
+		StudentRepository rpst = new StudentRepository();
+		rpst.addStudent(student);
 		
-		while(result.next())
-			System.out.println(result.getInt("iduser"));
-		db.close();
 		
-//		try{
-//			CourseRepository rep = new CourseRepository();
-//			rep.add("Softwear");
-//			
-//			List<Course> list = rep.getList();
-//			
-//			for(Course c : list)
-//				System.out.println(c.getName());
-//		}
-//		catch(Exception ex)
-//		{
-//			System.out.println("Error!!!"+ex.getMessage());
-//		}
+		System.out.println("Finish!!!!");
 	}
 
 }

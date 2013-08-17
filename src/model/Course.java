@@ -2,30 +2,46 @@ package model;
 
 public class Course 
 {
-	private int idCourse;
-	private String name;
+	private int idClass;
+	private String CourseName;
+	private String ClassName;
 	
-	public Course(){ };
+	public Course(){ }
 	
-	public Course(int id, String name)
+	public Course(int idClass)
 	{
-		this.setIdCourse(id);
-		this.setName(name);
+		super();
+		this.idClass = idClass;
+	}
+	
+	public Course(int idClass, String courseName, String className) {
+		
+		this(idClass);
+		this.CourseName = courseName;
+		this.ClassName = className;
 	}
 
-	public int getIdCourse() {
-		return idCourse;
+	public int getIdClass() {
+		return idClass;
 	}
 
-	public void setIdCourse(int idCourse) {
-		this.idCourse = idCourse;
+	public void setIdClass(int idClass) {
+		this.idClass = idClass;
 	}
 
-	public String getName() {
-		return name;
+	public String getCourseName() {
+		return CourseName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCourseName(String courseName) {
+		CourseName = courseName;
+	}
+
+	public String getClassName() {
+		return ClassName;
+	}
+
+	public void setClassName(String className) {
+		ClassName = className;
 	}
 }

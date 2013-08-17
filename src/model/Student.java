@@ -5,17 +5,15 @@ public class Student extends User
 {
 	private String StudyYear;
 	private Course Course;
-	
-	
 	public Student()
 	{
 		super();
 	}
 	
-	public Student (String name , String lname , String address , String cnumber , 
+	public Student (String identity, String name , String lname , String address , String cnumber , 
 					String studyyear , Course course)
 	{
-		super (name, lname, address, cnumber);
+		super (identity, name, lname, address, cnumber);
 		
 		StudyYear = studyyear;
 		Course = course;

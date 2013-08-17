@@ -11,10 +11,10 @@ public class CourseCoordinator extends Lecturer
 		
 	}
 	
-	public CourseCoordinator (String name , String lname , String address , String cardNumber , 
+	public CourseCoordinator (String identity, String name , String lname , String address , String cardNumber , 
 							  Course specialization, Course... courses)
 	{
-		super (name,lname,address,cardNumber,courses);
+		super (identity, name,lname,address,cardNumber,courses);
 		Specialization = specialization;
 	}
 	

@@ -7,38 +7,26 @@ import java.util.List;
 import model.User;
 
 public abstract class UserRepository extends Repository {
-
-	private User user;
 	
 	public UserRepository() throws Exception {
 		super();
 	}
+	
 
-	/**
-	 * @param T t user only
-	 */
-	@Override
-	public <T> void add(T t) throws Exception {
-		
-		if( !(t instanceof User))
-			throw new Exception("Only Users");
-		
-		user = (User)t;
-		addUser();
-
-	}
-
-	@Override
-	public <T> List<T> getList() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	// declare abstract methods
+	public abstract List<User> getUserList() throws Exception;
+	
+	public abstract User serchById(int id) throws Exception;
+	
+	public abstract User searchByIdentityCard(String identity) throws Exception;
+	
+	public abstract User searchName(String name) throws Exception;
 	
 	/**
 	 * insert user into user table
 	 * @return id user
 	 */
-	protected synchronized int addUser() throws SQLException
+	public synchronized int addUser(User user) throws SQLException
 	{
 		int returnId;
 		
@@ -55,7 +43,10 @@ public abstract class UserRepository extends Repository {
 		db.addParamBoolean(7, false);
 		
 		ResultSet result = db.resultQuery();
-		returnId = result.getInt("iduser");
+		if(result.next())
+			returnId = result.getInt("iduser");
+		else
+			returnId = -1;
 		
 		//close connection
 		db.close();

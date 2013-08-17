@@ -11,9 +11,9 @@ public class Lecturer extends User
 		super();
 	}
 	
-	public Lecturer (String name , String lname , String address , String cnumber , Course... courses)
+	public Lecturer (String identity, String name , String lname , String address , String cnumber , Course... courses)
 	{
-		super (name,lname,address,cnumber);
+		super (identity, name,lname,address,cnumber);
 		
 		Courses = courses;
 	}

@@ -18,12 +18,13 @@ public abstract class User
 		
 	}
 	
-	public User(String name , String lname , String address , String cnumber)
+	public User(String identity, String name , String lname , String address , String cnumber)
 	{
-		username = name;
-		LastName = lname;
-		DeliveryAddress = address;
-		CreditNumber = cnumber;
+		this.username = name;
+		this.LastName = lname;
+		this.DeliveryAddress = address;
+		this.CreditNumber = cnumber;
+		this.identityCard = identity;
 		
 	}
 
