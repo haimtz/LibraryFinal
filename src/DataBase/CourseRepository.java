@@ -55,7 +55,7 @@ public class CourseRepository extends Repository
 
 	public List<Course> getList() throws Exception
 	{
-		List<Course> list = new ArrayList<Course>();
+		List<Course> courseList = new ArrayList<Course>();
 		ResultSet result;
 		
 		db.StoredProcdure("call select_all_courses()");
@@ -65,11 +65,16 @@ public class CourseRepository extends Repository
 		
 		while(result.next())
 		{
-			//TODO add object to list
+			Course myCourse = new Course();
+			myCourse.setIdClass(result.getInt("id"));
+			myCourse.setYear(result.getString("_year"));
+			myCourse.setCourseName(result.getString("courseName"));
+			
+			courseList.add(myCourse);
 		}
 		
 		db.close();
-		return list;
+		return courseList;
 		
 	}
 

@@ -14,16 +14,25 @@ public class DataBaseTester {
 	 */
 	public static void main(String[] args) throws Exception {
 		
-		Course course = new Course();
-		course.setIdClass(1);
+//		Course course = new Course();
+//		course.setIdClass(1);
+//		
+//		Student student = new Student("1234", "DB", "TEST", "ADD GMAIL", "09888", "89", course);
+//		
+//		StudentRepository rpst = new StudentRepository();
+//		rpst.addStudent(student);
+//		
+//		
+//		System.out.println("Finish!!!!");
 		
-		Student student = new Student("1234", "DB", "TEST", "ADD GMAIL", "09888", "89", course);
+		CourseRepository crp = new CourseRepository();
+		Course cu = crp.searchCourse("softwear", 2011);
 		
-		StudentRepository rpst = new StudentRepository();
-		rpst.addStudent(student);
-		
-		
-		System.out.println("Finish!!!!");
+		if(cu != null)
+			System.out.println("Course Name: " + cu.getCourseName() + 
+								"\nCourse year: " + cu.getYear());
+		else
+			System.out.println("No result!!!");
 	}
 
 }
