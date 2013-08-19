@@ -4,7 +4,7 @@ public class Course
 {
 	private int idClass;
 	private String CourseName;
-	private String ClassName;
+	private String year;
 	
 	public Course(){ }
 	
@@ -14,11 +14,11 @@ public class Course
 		this.idClass = idClass;
 	}
 	
-	public Course(int idClass, String courseName, String className) {
+	public Course(int idClass, String courseName, String year) {
 		
 		this(idClass);
 		this.CourseName = courseName;
-		this.ClassName = className;
+		this.year = year;
 	}
 
 	public int getIdClass() {
@@ -37,11 +37,11 @@ public class Course
 		CourseName = courseName;
 	}
 
-	public String getClassName() {
-		return ClassName;
+	public String getYear() {
+		return year;
 	}
 
-	public void setClassName(String className) {
-		ClassName = className;
+	public void setYear(String year) {
+		this.year = year;
 	}
 }

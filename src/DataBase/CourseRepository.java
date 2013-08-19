@@ -29,6 +29,29 @@ public class CourseRepository extends Repository
 		
 		db.close();
 	}
+	
+	public Course searchCourse(String name, int year) throws Exception
+	{
+		String s_year = Integer.toString(year);
+		Course myCourse = null;
+		
+		db.StoredProcdure("call search_course(?,?)");
+		
+		db.addParamString(1, name);
+		db.addParamString(2,s_year);
+		
+		ResultSet result = db.resultQuery();
+		
+		if( result.next())
+		{
+			myCourse = new Course();
+			myCourse.setIdClass(result.getInt("id"));
+			myCourse.setYear(result.getString("_year"));
+			myCourse.setCourseName(result.getString("courseName"));
+		}
+		
+		return myCourse;
+	}
 
 	public List<Course> getList() throws Exception
 	{
