@@ -25,14 +25,24 @@ public class DataBaseTester {
 //		
 //		System.out.println("Finish!!!!");
 		
-		CourseRepository crp = new CourseRepository();
-		Course cu = crp.searchCourse("softwear", 2011);
+//		CourseRepository crp = new CourseRepository();
+//		Course cu = crp.searchCourse("softwear", 2011);
+//		
+//		if(cu != null)
+//			System.out.println("Course Name: " + cu.getCourseName() + 
+//								"\nCourse year: " + cu.getYear());
+//		else
+//			System.out.println("No result!!!");
 		
-		if(cu != null)
-			System.out.println("Course Name: " + cu.getCourseName() + 
-								"\nCourse year: " + cu.getYear());
-		else
-			System.out.println("No result!!!");
+		
+		Student st;
+		StudentRepository studentRep = new StudentRepository();
+		
+		st = studentRep.serchById(1);
+		
+		System.out.println("id: "+ st.getIduser()
+				+ " name: " + st.getUsername()
+				+ " last name: " + st.getLastName());
 	}
 
 }

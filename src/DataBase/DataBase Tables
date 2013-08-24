@@ -27,3 +27,29 @@ CREATE TABLE `courses` (
   PRIMARY KEY (`idcourse`),
   UNIQUE KEY `courseName_UNIQUE` (`courseName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8$$
+
+
+----------------------
+Create Student
+----------------------
+----------------------
+
+CREATE TABLE `students` (
+  `idstudent` int(11) NOT NULL,
+  `idclass` int(11) NOT NULL,
+  UNIQUE KEY `idstudent_UNIQUE` (`idstudent`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8$$
+
+----------------------
+Create classes
+----------------------
+----------------------
+
+CREATE TABLE `classes` (
+  `idclass` int(11) NOT NULL AUTO_INCREMENT,
+  `idcourse` int(11) NOT NULL,
+  `startYear` year(4) DEFAULT NULL,
+  PRIMARY KEY (`idclass`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8$$
+
+
